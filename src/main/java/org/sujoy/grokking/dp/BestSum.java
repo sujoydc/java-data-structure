@@ -27,7 +27,11 @@ public class BestSum {
         //log.info("Called with {}", targetSum);
         if (memo.containsKey(targetSum)) {
             //log.info("Found in cache for {}", targetSum);
-            return memo.get(targetSum);
+            if (memo.get(targetSum) == null) {
+                return null;
+            } else {
+                return new ArrayList<>(memo.get(targetSum));
+            }
         }
 
         if (targetSum == 0) {
