@@ -1,0 +1,14 @@
+# Testing YAML
+
+name: Sujoy Datta
+age: "46"
+data: !there
+  common:
+    hello: This is There
+    type: Here Type
+  there:
+    key1: value1
+    key2: value2
+  noArg: Just to test more and more
+
+

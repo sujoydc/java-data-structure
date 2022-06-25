@@ -11,13 +11,14 @@ public class BestSum {
 
     public static void main(String[] args) {
         BestSum ts = new BestSum();
+        log.info("Possible ---> {} ", ts.bestSum(4, new int[]{1, 2}, new HashMap<>())); // 2, 2
         log.info("Possible ---> {} ", ts.bestSum(4, new int[]{1, 2, 5}, new HashMap<>())); // 2, 2
         log.info("Possible ---> {} ", ts.bestSum(8, new int[]{1, 4, 5}, new HashMap<>())); // 4,4
         log.info("Possible ---> {} ", ts.bestSum(0, new int[]{1, 4, 5}, new HashMap<>())); // []
         log.info("Possible ---> {} ", ts.bestSum(7, new int[]{4, 5}, new HashMap<>())); // NULL
         log.info("Possible ---> {} ", ts.bestSum(7, new int[]{5, 3, 4, 7}, new HashMap<>())); // 7
-        log.info("Possible ---> {} ", ts.bestSum(8, new int[]{1, 3, 5}, new HashMap<>())); // 9, 9
-//        log.info("Possible ---> {} ", ts.bestSum(100, new int[]{1, 2, 5, 25}, new HashMap<>())); // 25, 25, 25, 25
+        log.info("Possible ---> {} ", ts.bestSum(8, new int[]{1, 3, 5}, new HashMap<>())); // 3, 5
+        log.info("Possible ---> {} ", ts.bestSum(100, new int[]{1, 2, 5, 25}, new HashMap<>())); // 25, 25, 25, 25
     }
 
     public List<Integer> bestSum(int targetSum,
@@ -51,13 +52,12 @@ public class BestSum {
             }
         }
 
-        if(shortestResult != null
-            && memo.containsKey(targetSum)
-            && memo.get(targetSum) != null
-            && memo.get(targetSum).size() > shortestResult.size()){
-            memo.put(targetSum, shortestResult);
-        }
+        memo.put(targetSum, shortestResult);
 
-        return shortestResult;
+        if (shortestResult == null) {
+            return null;
+        } else {
+            return new ArrayList<>(shortestResult);
+        }
     }
 }
