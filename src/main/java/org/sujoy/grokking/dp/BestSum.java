@@ -24,9 +24,7 @@ public class BestSum {
     public List<Integer> bestSum(int targetSum,
                                  int[] numbers,
                                  Map<Integer, List<Integer>> memo) {
-        //log.info("Called with {}", targetSum);
         if (memo.containsKey(targetSum)) {
-            //log.info("Found in cache for {}", targetSum);
             if (memo.get(targetSum) == null) {
                 return null;
             } else {
