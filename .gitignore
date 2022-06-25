@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/java,gradle
 
+**/**/.DS_Store
+
 ### Java ###
 *.class
 
@@ -23,6 +25,7 @@ hs_err_pid*
 /build/
 build/
 gradle/
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
